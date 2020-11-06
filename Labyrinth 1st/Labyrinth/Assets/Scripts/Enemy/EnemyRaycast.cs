@@ -8,6 +8,8 @@ public class EnemyRaycast : MonoBehaviour
     private Ray castedRay;
     private RaycastHit hit;
 
+    Renderer playerRenderer;
+
     [SerializeField]
     bool playerDetected = false;
 
@@ -42,6 +44,7 @@ public class EnemyRaycast : MonoBehaviour
                 playerDetected = true;
                 agent.SetDestination(player.transform.position);
                 playerSript.playerCaught();
+                
                 Debug.Log("Player hit");
 
                 if (Vector3.Distance(transform.position, player.transform.position) <= stopDistance) 

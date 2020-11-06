@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour, Controls
     public void playerCaught()
     {
         speed = 0;
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
     }
 
     public void PickUp()

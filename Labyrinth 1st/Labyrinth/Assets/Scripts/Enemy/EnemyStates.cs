@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+[RequireComponent(typeof(NavMeshAgent))]
 
 public class EnemyStates : MonoBehaviour
 {
@@ -13,9 +14,9 @@ public class EnemyStates : MonoBehaviour
     }
 
     private int destinationTarget = 0;
-    private NavMeshAgent agent;
+    private NavMeshAgent agent => GetComponent<NavMeshAgent>();
     private RaycastHit hit;
-    private PlayerController playerSript;
+    private PlayerController playerSript => player.GetComponent<PlayerController>();
 
     [Header("Patrol")]
     [SerializeField]
@@ -33,18 +34,12 @@ public class EnemyStates : MonoBehaviour
 
     public EnemyState CurrentState;
 
-    private void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        agent.autoBraking = false;
-
-        playerSript = player.GetComponent<PlayerController>();
-    }
+    private void Start() => agent.autoBraking = false;
 
     void Update()
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit))
-            RaycastCheck();
+           
 
         Debug.DrawRay(transform.position, transform.forward * 50);
 
@@ -52,49 +47,44 @@ public class EnemyStates : MonoBehaviour
         {
             case EnemyState.Patrol:
 
+                RaycastCheck();
                 agent.isStopped = false;
                 if (!agent.pathPending && agent.remainingDistance < 0.5f)
                     Patrolling();
+                    
                 break;
 
             case EnemyState.PlayerSeen:
 
+                
                 GoToPlayer();
                 
                 break;
 
             case EnemyState.Distracted:
 
+                RaycastCheck();
                 DistractionDetected();
                 break;
 
             default:
+                CurrentState = EnemyState.Patrol;
                 break;
         }
     }
 
     void RaycastCheck()
     {
+        var hitDist = hit.collider.GetComponent<DistractionItem>();
+
         if (hit.collider.gameObject == player)
         {
             CurrentState = EnemyState.PlayerSeen;
         }
 
-        else if (hit.collider.CompareTag("Distraction"))
+        else if (hitDist != null)
         {
-            CurrentState = EnemyState.Distracted;
-        }
-
-        else
-        {
-            CurrentState = EnemyState.Patrol;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Distraction"))
-        {
+            distraction = hit.collider.gameObject; //stores the game object
             CurrentState = EnemyState.Distracted;
         }
     }
@@ -122,7 +112,8 @@ public class EnemyStates : MonoBehaviour
 
     void DistractionDetected()
     {
-        agent.SetDestination(GameObject.FindWithTag("Distraction").transform.position);
+        if (distraction == null) CurrentState = EnemyState.Patrol;
+        agent.SetDestination(distraction.transform.position);
         Debug.Log("Distracted");
 
         if (Vector3.Distance(transform.position, GameObject.FindWithTag("Distraction").transform.position) < stopDistance)

@@ -17,6 +17,8 @@ public class KeyboardController : MonoBehaviour
     KeyCode jump = KeyCode.Space;
     [SerializeField]
     KeyCode drop = KeyCode.LeftControl;
+    [SerializeField]
+    KeyCode pickup = KeyCode.LeftAlt;
 
     [Header("Player character script")]
     [SerializeField]
@@ -41,6 +43,7 @@ public class KeyboardController : MonoBehaviour
         if (Input.GetKey(left)) playerCharacter.Left();
         if (Input.GetKey(jump)) playerCharacter.Jump();
         if (Input.GetKeyDown(drop)) playerCharacter.Drop();
+        if (Input.GetKeyDown(pickup)) playerCharacter.PickUp();
 
     }
 
