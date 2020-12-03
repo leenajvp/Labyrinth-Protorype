@@ -63,15 +63,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Controls.cs" />
+    <Compile Include="Assets\Scripts\Button.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyRaycast.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStates.cs" />
     <Compile Include="Assets\Scripts\Enemy\PatrolBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Goal\LevelComplete.cs" />
+    <Compile Include="Assets\Scripts\Instructions\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Instructions\InfoStop.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Controls.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\ICoin.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDistraction.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IPlayer.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IReadable.cs" />
     <Compile Include="Assets\Scripts\Player\Coins.cs" />
     <Compile Include="Assets\Scripts\Player\DistractionItem.cs" />
     <Compile Include="Assets\Scripts\Player\KeyboardController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\PushBoxes.cs" />
+    <Compile Include="Assets\Scripts\SnitchBehaviour.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/44746/Desktop/Game tech/Labyrinth-Protorype/Labyrinth 1st/Labyrinth/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -275,6 +285,12 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

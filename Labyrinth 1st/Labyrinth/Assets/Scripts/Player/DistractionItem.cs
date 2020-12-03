@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DistractionItem : MonoBehaviour
+public class DistractionItem : MonoBehaviour, IDistraction
 {
     void Start()
     {
-        Object.Destroy(gameObject, 30.0f);
-
+        Object.Destroy(gameObject, 10.0f);
     }
 }

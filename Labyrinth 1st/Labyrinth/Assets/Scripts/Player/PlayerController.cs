@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerController : MonoBehaviour, Controls
+public class PlayerController : MonoBehaviour, Controls, IPlayer
 {
     [SerializeField]
     float speed = 10.0f;
     [SerializeField]
-    float rotationSpeed = 45.0f;
+    float rotationSpeed = 70.0f;
     [SerializeField]
     GameObject objectToDrop;
 
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour, Controls
     [SerializeField]
     bool isGrounded;
 
-    float shootingWait = 1f;
+   // float shootingWait = 1f;
 
     private Rigidbody rb;
 

@@ -9,7 +9,7 @@ public interface Controls
     void Backward();
     void Right();
     void Left();
-    void Jump();
     void PickUp();
     void Drop();
+    void Jump();
 }

@@ -1,10 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public List<Coins> keysCollected = new List<Coins>();
+    
+    public List<Coins> coinsCollected = new List<Coins>();
+
+    [Header("Coins UI")]
+    [SerializeField]
+    Text numberOfCoins;
+
+    private void Update()
+    {
+        numberOfCoins.text = coinsCollected.Count.ToString();
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -12,9 +23,8 @@ public class PlayerInventory : MonoBehaviour
 
         if (Coin != null)
         {
-            keysCollected.Add(Coin);
-
-            Coin.gameObject.SetActive(false);
+           coinsCollected.Add(Coin);
+           Coin.gameObject.SetActive(false);
         }
     }
 }
