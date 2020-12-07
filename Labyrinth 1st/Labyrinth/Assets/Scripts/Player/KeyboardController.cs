@@ -19,30 +19,27 @@ public class KeyboardController : MonoBehaviour
     KeyCode drop = KeyCode.LeftControl;
     [SerializeField]
     KeyCode pickup = KeyCode.LeftAlt;
+    [SerializeField]
+    KeyCode invisible = KeyCode.RightShift;
 
-    [Header("Player character script")]
+    [Header("PlayerControllerScript")]
     [SerializeField]
     MonoBehaviour target;
 
-    Controls playerCharacter;
-
-    [Header("Dialogue")]
+    [Header("DialogueControls")]
     [SerializeField]
     KeyCode read = KeyCode.Tab;
     [SerializeField]
     KeyCode exitText = KeyCode.E;
+
     [Header("DialogueScript")]
     [SerializeField]
     DialogueManager dialogue;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerCharacter = target as Controls;
-        //dialogue = GetComponent<DialogueManager>();
-    }
+    IControls playerCharacter;
 
-    // Update is called once per frame
+    void Start() => playerCharacter = target as IControls;
+
     void Update()
     {
         if (Input.GetKey(forward)) playerCharacter.Forward();
@@ -52,10 +49,10 @@ public class KeyboardController : MonoBehaviour
         if (Input.GetKey(jump)) playerCharacter.Jump();
         if (Input.GetKeyDown(drop)) playerCharacter.Drop();
         if (Input.GetKeyDown(pickup)) playerCharacter.PickUp();
+        if (Input.GetKeyDown(invisible)) playerCharacter.GoInvisible();
 
         if (Input.GetKeyDown(read)) dialogue.Read();
         if (Input.GetKeyDown(exitText)) dialogue.BackToGame();
-
     }
 
 

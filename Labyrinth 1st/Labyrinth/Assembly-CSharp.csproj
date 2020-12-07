@@ -63,25 +63,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Button.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyRaycast.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyStates.cs" />
-    <Compile Include="Assets\Scripts\Enemy\PatrolBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Goal\LevelComplete.cs" />
-    <Compile Include="Assets\Scripts\Instructions\DialogueManager.cs" />
-    <Compile Include="Assets\Scripts\Instructions\InfoStop.cs" />
+    <Compile Include="Assets\Scripts\Delete.cs" />
+    <Compile Include="Assets\Scripts\Enemy Behaviours\BossSnitchBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Enemy Behaviours\EnemyStates.cs" />
+    <Compile Include="Assets\Scripts\Enemy Behaviours\FollowerSnitches.cs" />
+    <Compile Include="Assets\Scripts\Enemy Behaviours\SnitchCamp.cs" />
+    <Compile Include="Assets\Scripts\Environment\GameBoss.cs" />
+    <Compile Include="Assets\Scripts\Environment\Goal\Button.cs" />
+    <Compile Include="Assets\Scripts\Environment\Goal\LevelComplete.cs" />
+    <Compile Include="Assets\Scripts\Environment\Instructions\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Environment\Instructions\InfoStop.cs" />
+    <Compile Include="Assets\Scripts\Environment\Lists\Coins.cs" />
+    <Compile Include="Assets\Scripts\Environment\Lists\DistractionItem.cs" />
+    <Compile Include="Assets\Scripts\Environment\Lists\Invisibility.cs" />
+    <Compile Include="Assets\Scripts\Environment\PushBoxes.cs" />
     <Compile Include="Assets\Scripts\Interfaces\Controls.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IBossSnitch.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ICoin.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDefaultPos.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDistraction.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IPlayer.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IReadable.cs" />
-    <Compile Include="Assets\Scripts\Player\Coins.cs" />
-    <Compile Include="Assets\Scripts\Player\DistractionItem.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\ISnitch.cs" />
     <Compile Include="Assets\Scripts\Player\KeyboardController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInventory.cs" />
-    <Compile Include="Assets\Scripts\PushBoxes.cs" />
-    <Compile Include="Assets\Scripts\SnitchBehaviour.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/44746/Desktop/Game tech/Labyrinth-Protorype/Labyrinth 1st/Labyrinth/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

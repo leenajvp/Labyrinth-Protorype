@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-public interface Controls 
+﻿
+public interface IControls 
 {
     void Forward();
     void Backward();
@@ -12,4 +8,5 @@ public interface Controls
     void PickUp();
     void Drop();
     void Jump();
+    void GoInvisible();
 }
