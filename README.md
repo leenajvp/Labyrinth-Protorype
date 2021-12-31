@@ -1,5 +1,5 @@
 # Labyrinth-Protorype
-Second year University courseWork project to demonstrate OOP practices.
+Second year (2020) University courseWork project to demonstrate OOP practices.
 
 
 Includes:
