@@ -1,5 +1,5 @@
 # Labyrinth-Protorype
-First year University courseWork project to demonstrate OOP practices.
+Second year University courseWork project to demonstrate OOP practices.
 
 
 Includes:
